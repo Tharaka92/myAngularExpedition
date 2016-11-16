@@ -88,5 +88,31 @@ var myApp = angular
 
                     $scope.employees = employees;
                     $scope.rowLimit = 3;
+                })
+                .controller("ngsorting", function ($scope) {
+                    var employees = [
+                        { FirstName: "Tharaka", DateOfBirth: new Date("November 23, 1980"), Gender: "Male", Salary: 35000.988 },
+                        { FirstName: "Thushara", DateOfBirth: new Date("May 05, 1986"), Gender: "Male", Salary: 35000 },
+                        { FirstName: "Eranda", DateOfBirth: new Date("August 13, 1978"), Gender: "Male", Salary: 35000 },
+                        { FirstName: "Gihan", DateOfBirth: new Date("October 29, 1992"), Gender: "Male", Salary: 25000 },
+                        { FirstName: "Sharaniya", DateOfBirth: new Date("December 30, 1990"), Gender: "Female", Salary: 55000 },
+                    ];
+
+                    $scope.employees = employees;
+                    $scope.sortColumn = 'FirstName';
+                }).controller("ngfullduplexsorting", function ($scope) {
+                    var employees = [
+                        { FirstName: "Tharaka", DateOfBirth: new Date("November 23, 1980"), Gender: "Male", Salary: 35000.988 },
+                        { FirstName: "Thushara", DateOfBirth: new Date("May 05, 1986"), Gender: "Male", Salary: 35000 },
+                        { FirstName: "Eranda", DateOfBirth: new Date("August 13, 1978"), Gender: "Male", Salary: 35000 },
+                        { FirstName: "Gihan", DateOfBirth: new Date("October 29, 1992"), Gender: "Male", Salary: 25000 },
+                        { FirstName: "Sharaniya", DateOfBirth: new Date("December 30, 1990"), Gender: "Female", Salary: 55000 },
+                    ];
+
+                    $scope.employees = employees;
+                    $scope.sortColumn = 'FirstName';
+                    $scope.IsDescending = false;
+
+
                 });
 

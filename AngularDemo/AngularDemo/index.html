@@ -142,5 +142,65 @@
             </tbody>
         </table>
     </div>
+    <br />
+    <div ng-controller="ngsorting">
+        Order by : <select ng-model="sortColumn">
+            <option value="FirstName">First name ASC</option>
+            <option value="Gender">Gender ASC</option>
+            <option value="DateOfBirth">Date of birth ASC</option>
+            <option value="-Salary">Salary DESC</option>
+        </select>
+        <br /><br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Salary (Amount)</th>
+                    <th>Salary (Currency)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | orderBy:sortColumn">
+                    <td>{{employee.FirstName | uppercase}}</td>
+                    <td>{{employee.DateOfBirth | date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.Gender | lowercase}}</td>
+                    <td>{{employee.Salary | number:2}}</td>
+                    <td>{{employee.Salary | currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <div ng-controller="ngfullduplexsorting">
+        Order by : <select ng-model="sortColumn">
+            <option value="FirstName">First name ASC</option>
+            <option value="Gender">Gender ASC</option>
+            <option value="DateOfBirth">Date of birth ASC</option>
+            <option value="-Salary">Salary DESC</option>
+        </select>
+        <br /><br />
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>DOB</th>
+                    <th>Gender</th>
+                    <th>Salary (Amount)</th>
+                    <th>Salary (Currency)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | orderBy:sortColumn">
+                    <td>{{employee.FirstName | uppercase}}</td>
+                    <td>{{employee.DateOfBirth | date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.Gender | lowercase}}</td>
+                    <td>{{employee.Salary | number:2}}</td>
+                    <td>{{employee.Salary | currency}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
