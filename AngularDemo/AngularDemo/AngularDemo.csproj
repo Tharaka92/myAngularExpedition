@@ -896,6 +896,7 @@
     <Content Include="scripts\i18n\angular-locale_zh.js" />
     <Content Include="scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="scripts\i18n\angular-locale_zu.js" />
+    <Content Include="styles\tinystyle.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
