@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/customScript.js"></script>
+    <link rel="stylesheet" href="styles/tinystyle.css" />
 </head>
 <body>
     <div ng-controller="myController">
@@ -174,25 +175,18 @@
     </div>
     <br />
     <div ng-controller="ngfullduplexsorting">
-        Order by : <select ng-model="sortColumn">
-            <option value="FirstName">First name ASC</option>
-            <option value="Gender">Gender ASC</option>
-            <option value="DateOfBirth">Date of birth ASC</option>
-            <option value="-Salary">Salary DESC</option>
-        </select>
-        <br /><br />
         <table>
             <thead>
                 <tr>
-                    <th>Name</th>
-                    <th>DOB</th>
-                    <th>Gender</th>
-                    <th>Salary (Amount)</th>
+                    <th ng-click="sortData('FirstName')" style="cursor:pointer">FirstName <div ng-class="getSortStyle('FirstName')"></div> </th>
+                    <th ng-click="sortData('DateOfBirth')" style="cursor:pointer">Date Of Birth <div ng-class="getSortStyle('DateOfBirth')"></div> </th>
+                    <th ng-click="sortData('Gender')" style="cursor:pointer">Gender <div ng-class="getSortStyle('Gender')"></div> </th>
+                    <th ng-click="sortData('Salary')" style="cursor:pointer">Salary (Amount) <div ng-class="getSortStyle('Salary')"></div> </th>
                     <th>Salary (Currency)</th>
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="employee in employees | orderBy:sortColumn">
+                <tr ng-repeat="employee in employees | orderBy:sortColumn:IsDescending">
                     <td>{{employee.FirstName | uppercase}}</td>
                     <td>{{employee.DateOfBirth | date:"dd/MM/yyyy"}}</td>
                     <td>{{employee.Gender | lowercase}}</td>

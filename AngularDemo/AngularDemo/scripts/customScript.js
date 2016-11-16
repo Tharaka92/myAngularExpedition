@@ -113,6 +113,17 @@ var myApp = angular
                     $scope.sortColumn = 'FirstName';
                     $scope.IsDescending = false;
 
+                    $scope.sortData = function (column) {
+                        $scope.IsDescending = ($scope.sortColumn == column) ? !$scope.IsDescending : false;
+                        $scope.sortColumn = column;
+                    }
 
+                    $scope.getSortStyle = function (column) {
+                        if ($scope.sortColumn == column) {
+                            return $scope.IsDescending ? 'arrow-down' : 'arrow-up';
+                        }
+
+                        return '';
+                    }
                 });
 
