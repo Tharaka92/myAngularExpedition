@@ -35,7 +35,7 @@ var myApp = angular
                             cities: [
                               { name: "Colombo" },
                               { name: "Kandy" },
-                              {name : "Trinco"}
+                              { name: "Trinco" }
                             ]
                         },
                         {
@@ -61,7 +61,7 @@ var myApp = angular
                 })
                 .controller("ngevents", function ($scope) {
                     var technologies = [
-                        { Name: "C#", Likes: 0, Dislikes : 0},
+                        { Name: "C#", Likes: 0, Dislikes: 0 },
                         { Name: "ASP Web API", Likes: 0, Dislikes: 0 },
                         { Name: "AngularJS", Likes: 0, Dislikes: 0 },
                         { Name: "SignalR", Likes: 0, Dislikes: 0 }
@@ -76,5 +76,17 @@ var myApp = angular
                     $scope.increaseDislikes = function (technology) {
                         technology.Dislikes++;
                     }
+                })
+                .controller("ngfilters", function ($scope) {
+                    var employees = [
+                        { FirstName: "Tharaka", DateOfBirth: new Date("November 23, 1980"), Gender: "Male", Salary: 35000.988 },
+                        { FirstName: "Thushara", DateOfBirth: new Date("May 05, 1986"), Gender: "Male", Salary: 35000 },
+                        { FirstName: "Eranda", DateOfBirth: new Date("August 13, 1978"), Gender: "Male", Salary: 35000 },
+                        { FirstName: "Gihan", DateOfBirth: new Date("October 29, 1992"), Gender: "Male", Salary: 25000 },
+                        { FirstName: "Sharaniya", DateOfBirth: new Date("December 30, 1990"), Gender: "Female", Salary: 55000 },
+                    ];
+
+                    $scope.employees = employees;
+                    $scope.rowLimit = 3;
                 });
 
