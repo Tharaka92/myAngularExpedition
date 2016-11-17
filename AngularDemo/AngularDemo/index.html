@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/customScript.js"></script>
+    <script src="scripts/customFilters.js"></script>
     <link rel="stylesheet" href="styles/tinystyle.css" />
 </head>
 <body>
@@ -249,6 +250,23 @@
         </table>
     </div>
     <br />
-
+    <div ng-controller="ngcustomfilter">
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.FirstName}}</td>
+                    <td>{{employee.Gender | getGender}}</td>
+                    <td>{{employee.City}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
