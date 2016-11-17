@@ -125,5 +125,36 @@ var myApp = angular
 
                         return '';
                     }
+                }).controller("ngsearchfilter", function ($scope) {
+                    var employees = [
+                        { FirstName: "Tharaka", DateOfBirth: new Date("November 23, 1980"), Gender: "Male", Salary: 35000.988, City: "Godagama"},
+                        { FirstName: "Thushara", DateOfBirth: new Date("May 05, 1986"), Gender: "Male", Salary: 35000, City: "Kandy"},
+                        { FirstName: "Eranda", DateOfBirth: new Date("August 13, 1978"), Gender: "Male", Salary: 35000, City: "Kaduwela" },
+                        { FirstName: "Gihan", DateOfBirth: new Date("October 29, 1992"), Gender: "Male", Salary: 25000, City: "Kaduwela" },
+                        { FirstName: "Sharaniya", DateOfBirth: new Date("December 30, 1990"), Gender: "Female", Salary: 55000, City: "Kaduwela" },
+                    ];
+
+                    $scope.employees = employees;
+                }).controller("ngsearchmultiplecolumnsingletextbox", function ($scope) {
+                    var employees = [
+                        { FirstName: "Tharaka", DateOfBirth: new Date("November 23, 1980"), Gender: "Male", Salary: 35000.988, City: "Godagama" },
+                        { FirstName: "Thushara", DateOfBirth: new Date("May 05, 1986"), Gender: "Male", Salary: 35000, City: "Kandy" },
+                        { FirstName: "Eranda", DateOfBirth: new Date("August 13, 1978"), Gender: "Male", Salary: 35000, City: "Kaduwela" },
+                        { FirstName: "Gihan", DateOfBirth: new Date("October 29, 1992"), Gender: "Male", Salary: 25000, City: "Kaduwela" },
+                        { FirstName: "Sharaniya", DateOfBirth: new Date("December 30, 1990"), Gender: "Female", Salary: 55000, City: "Kaduwela" },
+                    ];
+
+                    $scope.employees = employees;
+                    $scope.search = function (item) {
+                        if ($scope.searchText == undefined) {
+                            return true;
+                        } else {
+                            if (item.FirstName.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1 || item.City.toLowerCase().indexOf($scope.searchText.toLowerCase()) != -1) {
+                                return true;
+                            }
+                        }
+
+                        return false;
+                    }
                 });
 

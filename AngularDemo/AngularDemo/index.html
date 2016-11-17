@@ -196,5 +196,59 @@
             </tbody>
         </table>
     </div>
+    <br />
+    <div ng-controller="ngsearchfilter">
+        <input type="text" placeholder="Search by first name" ng-model="searchText.FirstName"/>
+        <input type="text" placeholder="Search by city" ng-model="searchText.City" />
+        <input type="checkbox" ng-model="exactMatch" /> Exact Match
+        <br /> <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Date of birth</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:searchText:exactMatch">
+                    <td>{{employee.FirstName}}</td>
+                    <td>{{employee.DateOfBirth | date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.Gender}}</td>
+                    <td>{{employee.City}}</td>
+                    <td>{{employee.Salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+    <div ng-controller="ngsearchmultiplecolumnsingletextbox">
+        Search <input type="text" placeholder="Search employees by name or city" ng-model="searchText" />
+        <br /> <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Date of birth</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th>Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees | filter:search">
+                    <td>{{employee.FirstName}}</td>
+                    <td>{{employee.DateOfBirth | date:"dd/MM/yyyy"}}</td>
+                    <td>{{employee.Gender}}</td>
+                    <td>{{employee.City}}</td>
+                    <td>{{employee.Salary}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <br />
+
 </body>
 </html>
