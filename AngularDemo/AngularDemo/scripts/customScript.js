@@ -166,5 +166,15 @@ var myApp = angular
                     ];
 
                     $scope.employees = employees;
+                }).controller("nghideshow", function ($scope) {
+                    var employees = [
+                        { FirstName: "Tharaka", DateOfBirth: new Date("November 23, 1980"), Gender: 1, Salary: 35000.988, City: "Godagama" },
+                        { FirstName: "Thushara", DateOfBirth: new Date("May 05, 1986"), Gender: 1, Salary: 35000, City: "Kandy" },
+                        { FirstName: "Eranda", DateOfBirth: new Date("August 13, 1978"), Gender: 1, Salary: 35000, City: "Kaduwela" },
+                        { FirstName: "Gihan", DateOfBirth: new Date("October 29, 1992"), Gender: 3, Salary: 25000, City: "Kaduwela" },
+                        { FirstName: "Sharaniya", DateOfBirth: new Date("December 30, 1990"), Gender: 2, Salary: 55000, City: "Kaduwela" },
+                    ];
+
+                    $scope.employees = employees;
                 });
 

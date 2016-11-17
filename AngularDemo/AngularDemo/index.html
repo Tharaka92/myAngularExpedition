@@ -268,5 +268,30 @@
             </tbody>
         </table>
     </div>
+    <br />
+    <div ng-controller="nghideshow">
+        <input type="checkbox" ng-model="hideSalary" /> Hide/Mask salary
+        <br /> <br />
+        <table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Gender</th>
+                    <th>City</th>
+                    <th ng-hide="hideSalary">Salary</th>
+                    <th ng-show="hideSalary">Salary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.FirstName}}</td>
+                    <td>{{employee.Gender | getGender}}</td>
+                    <td>{{employee.City}}</td>
+                    <td ng-hide="hideSalary">{{employee.Salary}}</td>
+                    <td ng-show="hideSalary">#####</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
