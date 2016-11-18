@@ -95,6 +95,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\usa-flag.png" />
+    <Content Include="ngInclude.html" />
+    <Content Include="ngIncludeList.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

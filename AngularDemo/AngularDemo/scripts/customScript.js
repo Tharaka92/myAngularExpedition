@@ -214,5 +214,16 @@ var myApp = angular
 
                     $scope.employees = employees;
                     $scope.countries = countries;
+                }).controller("nginclude", function ($scope) {
+                    var employees = [
+                        { FirstName: "Tharaka", Salary: 35000.988, City: "Godagama" },
+                        { FirstName: "Thushara", Salary: 35000, City: "Kandy" },
+                        { FirstName: "Eranda", Salary: 35000, City: "Kaduwela" },
+                        { FirstName: "Gihan", Salary: 25000, City: "Kaduwela" },
+                        { FirstName: "Sharaniya", Salary: 55000, City: "Kaduwela" },
+                    ];
+
+                    $scope.employees = employees;
+                    $scope.employeeView = 'ngInclude.html';
                 });
 

@@ -323,5 +323,14 @@
             </li>
         </ul>
     </div>
+    <br />
+    <div ng-controller="nginclude">
+        Select view : 
+        <select ng-model="employeeView">
+            <option value="ngInclude.html">Table</option>
+            <option value="ngIncludeList.html">List</option>
+        </select>
+        <div ng-include="employeeView"></div>
+    </div>
 </body>
 </html>
