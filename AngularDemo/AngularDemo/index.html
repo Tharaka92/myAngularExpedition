@@ -199,7 +199,7 @@
     </div>
     <br />
     <div ng-controller="ngsearchfilter">
-        <input type="text" placeholder="Search by first name" ng-model="searchText.FirstName"/>
+        <input type="text" placeholder="Search by first name" ng-model="searchText.FirstName" />
         <input type="text" placeholder="Search by city" ng-model="searchText.City" />
         <input type="checkbox" ng-model="exactMatch" /> Exact Match
         <br /> <br />
@@ -292,6 +292,36 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+    <br />
+    <div ng-controller="nginit">
+        <!--<table>
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Salary</th>
+                    <th>City</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="employee in employees">
+                    <td>{{employee.FirstName}}</td>
+                    <td>{{employee.Salary}}</td>
+                    <td>{{employee.City}}</td>
+                </tr>
+            </tbody>
+        </table>-->
+
+        <ul>
+            <li ng-repeat="country in countries" ng-init="parentIndex = $index">
+                {{country.name}} - Index = {{$index}}
+                <ul>
+                    <li ng-repeat="city in country.cities">
+                        {{city.name}} - Index = {{$index}}, ParentIndex = {{parentIndex}}
+                    </li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </body>
 </html>

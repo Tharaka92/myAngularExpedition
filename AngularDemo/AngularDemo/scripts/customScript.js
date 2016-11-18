@@ -176,5 +176,43 @@ var myApp = angular
                     ];
 
                     $scope.employees = employees;
+                }).controller("nginit", function ($scope) {
+                    var employees = [
+                        { FirstName: "Tharaka", Salary: 35000.988, City: "Godagama" },
+                        { FirstName: "Thushara", Salary: 35000, City: "Kandy" },
+                        { FirstName: "Eranda", Salary: 35000, City: "Kaduwela" },
+                        { FirstName: "Gihan", Salary: 25000, City: "Kaduwela" },
+                        { FirstName: "Sharaniya", Salary: 55000, City: "Kaduwela" },
+                    ];
+
+                    var countries = [
+                        {
+                            name: "Sri lanka",
+                            cities: [
+                              { name: "Colombo" },
+                              { name: "Kandy" },
+                              { name: "Trinco" }
+                            ]
+                        },
+                        {
+                            name: "Australia",
+                            cities: [
+                              { name: "Victoria" },
+                              { name: "Melbourn" },
+                              { name: "Sydney" }
+                            ]
+                        },
+                        {
+                            name: "UK",
+                            cities: [
+                              { name: "Chelsey" },
+                              { name: "Birmingham" },
+                              { name: "London" }
+                            ]
+                        },
+                    ]
+
+                    $scope.employees = employees;
+                    $scope.countries = countries;
                 });
 
