@@ -242,5 +242,8 @@ var myApp = angular
                         url: 'http://jwappstaging.hypercentdeviceserver.com/api/location?searchtext='
                     })
                     .then(successCallback, errorCallback)
+                }).controller("ngCustomService", function ($scope, stringService) {
+                    //Calling injected angular service.
+                    $scope.output = stringService.processString(input);
                 });
 
