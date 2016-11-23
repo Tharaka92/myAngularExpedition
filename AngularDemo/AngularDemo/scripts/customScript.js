@@ -245,5 +245,11 @@ var myApp = angular
                 }).controller("ngCustomService", function ($scope, stringService) {
                     //Calling injected angular service.
                     $scope.output = stringService.processString(input);
+                }).controller("ngAnchorScroll", function ($scope, $location, $anchorScroll) {
+                    $scope.scrolTo = function (scrollLocationId) {
+                        $location.hash(scrollLocationId);
+                        $anchorScroll.yOffset = 20; // little space between element and the browser.
+                        $anchorScroll();
+                    }
                 });
 

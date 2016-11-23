@@ -9,7 +9,9 @@
     <script src="scripts/stringService.js"></script>
     <link rel="stylesheet" href="styles/tinystyle.css" />
 </head>
-<body>
+<body ng-controller="ngAnchorScroll">
+    <button id="top" ng-click="scrolTo('bottom')">Go to bottom</button>
+    <br />
     <div ng-controller="myController">
         <div>
             Name : {{Country.Name}}
@@ -296,23 +298,6 @@
     </div>
     <br />
     <div ng-controller="nginit">
-        <!--<table>
-            <thead>
-                <tr>
-                    <th>First Name</th>
-                    <th>Salary</th>
-                    <th>City</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="employee in employees">
-                    <td>{{employee.FirstName}}</td>
-                    <td>{{employee.Salary}}</td>
-                    <td>{{employee.City}}</td>
-                </tr>
-            </tbody>
-        </table>-->
-
         <ul>
             <li ng-repeat="country in countries" ng-init="parentIndex = $index">
                 {{country.name}} - Index = {{$index}}
@@ -371,5 +356,7 @@
             </tr>
         </table>
     </div>
+    <br />
+    <button id="bottom" ng-click="scrolTo('top')">Go to top</button>
 </body>
 </html>
