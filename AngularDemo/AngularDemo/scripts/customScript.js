@@ -225,5 +225,22 @@ var myApp = angular
 
                     $scope.employees = employees;
                     $scope.employeeView = 'ngInclude.html';
+                }).controller("nghttp", function ($scope, $http, $log) {
+
+                    var successCallback = function (response) {
+                        $scope.locations = response.data;
+                        $log.info(response);
+                    }
+
+                    var errorCallback = function (reason) {
+                        $scope.error = reason.data;
+                        $log.info(reason);
+                    }
+
+                    $http({
+                        method: 'GET',
+                        url: 'http://jwappstaging.hypercentdeviceserver.com/api/location?searchtext='
+                    })
+                    .then(successCallback, errorCallback)
                 });
 

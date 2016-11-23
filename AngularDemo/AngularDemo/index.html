@@ -325,12 +325,34 @@
     </div>
     <br />
     <div ng-controller="nginclude">
-        Select view : 
+        Select view :
         <select ng-model="employeeView">
             <option value="ngInclude.html">Table</option>
             <option value="ngIncludeList.html">List</option>
         </select>
         <div ng-include="employeeView"></div>
+    </div>
+    <div ng-controller="nghttp">
+        <table>
+            <thead>
+                <tr>
+                    <th>Location Name</th>
+                    <th>Location Type</th>
+                    <th>SubType</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="location in locations">
+                    <td>{{location.LocationName}}</td>
+                    <td>{{location.LocationType}}</td>
+                    <td>{{location.SubType}}</td>
+                    <td>{{location.Longitude}}</td>
+                    <td>{{location.Latitude}}</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </body>
 </html>
