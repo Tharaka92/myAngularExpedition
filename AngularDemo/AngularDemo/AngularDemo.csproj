@@ -95,10 +95,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="images\usa-flag.png" />
+    <Content Include="ngInclude.html" />
+    <Content Include="ngIncludeList.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="scripts\customFilters.js" />
+    <Content Include="scripts\stringService.js" />
     <Content Include="scripts\version.json" />
     <Content Include="scripts\errors.json" />
     <Content Include="scripts\angular.min.js.map" />
@@ -896,6 +900,7 @@
     <Content Include="scripts\i18n\angular-locale_zh.js" />
     <Content Include="scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="scripts\i18n\angular-locale_zu.js" />
+    <Content Include="styles\tinystyle.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
